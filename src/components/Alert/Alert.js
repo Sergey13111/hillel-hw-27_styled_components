@@ -31,8 +31,21 @@ background: ${(props) => {
   };
 }};
 `
+const StyledCloseButton = styled.button`
+color: inherit;
+background: inherit;
+border: none;
+padding: 0;
+margin: 0;
+
+&:hover {
+  cursor: pointer;
+  color: #b4cdcd;
+};
+`
+
 const Alert = ({ children, color, onClose }) => {
-  return <StyledAlert color={color}>{children}<CloseRoundedIcon cursor="pointer" onClick={onClose} /></StyledAlert>
+  return <StyledAlert color={color}>{children} <StyledCloseButton onClick={onClose}><CloseRoundedIcon /></StyledCloseButton></StyledAlert>
 };
 
 Alert.propTypes = {
@@ -40,7 +53,6 @@ Alert.propTypes = {
   color: PropTypes.oneOf(["error", "warning", "primary"]).isRequired,
   onClose: PropTypes.func.isRequired,
 }
-
 
 export default Alert;
 

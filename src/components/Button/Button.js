@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const StyledPrimaryButton = styled.button`
   min-width: 35px;
-  background: ${(props) => props.disabled ? "rgba(203, 212, 230, 0.3)" : "#605DEC"};
-  border: ${(props) => props.disabled ? "1px solid #7C8DB0" : "none"};
-  color: ${(props) => props.disabled ? "#7C8DB0" : "#FAFAFA"};
+  background: #605DEC;
+  border: none;
+  color: #FAFAFA;
   padding: ${(props) => {
     switch (props.size) {
       case "small":
@@ -22,6 +22,12 @@ const StyledPrimaryButton = styled.button`
   border-radius: 4px;
   margin:10px;
 
+  &:disabled {
+    background: rgba(203, 212, 230, 0.3);
+    border: 1px solid #7C8DB0;
+    color: #7C8DB0;
+  };
+
   &:hover {
     background: #1513A0;
     cursor:pointer;
@@ -30,8 +36,13 @@ const StyledPrimaryButton = styled.button`
 
 const StyledSecondaryButton = styled(StyledPrimaryButton)`
   background: none;
-  border: ${(props) => props.disabled ? "1px solid #7C8DB0" : "1px solid #605DEC"};
-  color: ${(props) => props.disabled ? "#7C8DB0" : "#605DEC"};
+  border: 1px solid #605DEC;
+  color: #605DEC;
+
+  &:disabled {
+    border: 1px solid #7C8DB0;
+    color: #7C8DB0;
+  };
 
   &:hover {
     background: #E9E8FC;

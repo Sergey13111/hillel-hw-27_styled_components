@@ -3,7 +3,6 @@ import Alert from './components/Alert/Alert';
 
 import { useState } from 'react';
 
-
 function App() {
   const [isOpenAlert, setOpenAlert] = useState(false);
 
